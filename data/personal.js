@@ -17,7 +17,7 @@ const PERSONAL = {
   // ── Hero section ──
   heroLine1:  'Building systems',
   heroLine2:  'that scale.',          // rendered in green
-  heroTagline: '# Senior Backend Engineer',
+  heroTagline: '# Backend Developer',
   heroDesc:    '6+ years designing distributed\nsystems, high-throughput APIs, and cloud infrastructure for millions.',
 
   // ── CTA buttons ──
