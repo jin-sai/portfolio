@@ -10,15 +10,15 @@ const SKILLS = {
   groups: [
     {
       title: 'languages & frameworks',
-      pills: ['Java', 'Spring Boot', 'Python', 'Flutter', 'Dart', 'C', 'C++'],
+      pills: ['Java', 'Spring Boot', 'Python', 'Flutter', 'Dart', 'C++'],
     },
     {
       title: 'cloud & devops',
-      pills: ['AWS', 'GCP', 'Kubernetes', 'Docker', 'Helm', 'ArgoCD', 'Git', 'Firebase'],
+      pills: ['GCP', 'Kubernetes', 'Docker', 'Helm', 'Git', 'Firebase'],
     },
     {
       title: 'data & messaging',
-      pills: ['Kafka', 'OpenSearch', 'Elasticsearch'],
+      pills: ['Kafka', 'OpenSearch', 'Elasticsearch', 'Firestore'],
     },
     {
       title: 'software development',
@@ -29,8 +29,8 @@ const SKILLS = {
       pills: ['Prometheus', 'Grafana', 'OpenTelemetry', 'ELK Stack'],
     },
     {
-      title: 'ai tools',
-      pills: ['Claude', 'Claude Code', 'Cursor', 'GitHub Copilot'],
+      title: 'AI tools',
+      pills: ['Claude', 'Claude Code', 'GitHub Copilot'],
     },
   ],
 
