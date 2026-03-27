@@ -133,7 +133,7 @@ function renderProjects() {
     const metricsHTML = p.metrics.map(m => `
       <div class="pm"><span class="pm-v">${m.value}</span><span class="pm-l">${m.label}</span></div>
     `).join('');
-    const linksHTML   = p.links.map(l => `<a href="${l.href}" class="plink">${l.label}</a>`).join('');
+    const linksHTML = p.links.map(l => `<a href="${l.href}" class="plink">${l.label}</a>`).join('');
     const mt = i === 0 ? '' : ' style="margin-top:2px"';
 
     return `
@@ -147,8 +147,22 @@ function renderProjects() {
           <span class="proj-arr">▶</span>
         </div>
         <div class="proj-body">
-          <p class="proj-desc">${p.desc}</p>
-          <div class="proj-metrics">${metricsHTML}</div>
+          <div class="proj-section">
+            <div class="proj-sec-lbl">problem</div>
+            <p class="proj-sec-txt">${p.problem}</p>
+          </div>
+          <div class="proj-section">
+            <div class="proj-sec-lbl">built</div>
+            <p class="proj-sec-txt">${p.built}</p>
+          </div>
+          <div class="proj-section">
+            <div class="proj-sec-lbl">impact</div>
+            <div class="proj-metrics">${metricsHTML}</div>
+          </div>
+          <div class="proj-section">
+            <div class="proj-sec-lbl">challenge</div>
+            <p class="proj-sec-txt">${p.challenge}</p>
+          </div>
           <div class="proj-links">${linksHTML}</div>
         </div>
       </div>
