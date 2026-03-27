@@ -65,6 +65,16 @@
     tout.appendChild(d);
   }
 
+  function addLink(url) {
+    const d = document.createElement('div');
+    d.className = 'tl';
+    const a = document.createElement('a');
+    a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    a.className = 'cb tlink'; a.textContent = url; a.style.marginLeft = '1ch';
+    d.appendChild(a);
+    tout.appendChild(d);
+  }
+
   function addBlank() {
     const d = document.createElement('div');
     d.className = 'tb';
@@ -100,6 +110,7 @@
     addBlank();
     content.forEach(([cls, text]) => {
       if (cls === 'tb') { addBlank(); return; }
+      if (cls === 'lk') { addLink(text); return; }
       addLine(cls, text);
     });
     addBlank();

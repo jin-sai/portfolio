@@ -72,8 +72,11 @@ function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
       ['cg', 'impact  :'],
       ...p.metrics.map(m => ['cw', '  ' + m.value + '  ' + m.label]),
     ];
-    const githubLink = p.links.find(l => l.label.includes('github') && l.href !== '#');
-    if (githubLink) content.push(['tb', ''], ['cb', '  ' + githubLink.href]);
+    const validLinks = p.links.filter(l => l.href !== '#');
+    if (validLinks.length) {
+      content.push(['tb', ''], ['cd', 'links   :']);
+      validLinks.forEach(l => content.push(['lk', l.href]));
+    }
     dir[_slug(p.title)] = { type: 'file', content };
   });
 })();

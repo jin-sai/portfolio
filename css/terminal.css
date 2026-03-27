@@ -40,6 +40,8 @@
 .tb { height: 7px; }
 
 /* Terminal colour helpers */
+.tlink { text-decoration: underline; cursor: pointer; }
+.tlink:hover { color: var(--green); }
 .cg { color: var(--green); }
 .ca { color: var(--amber); }
 .cr { color: var(--red);   }
