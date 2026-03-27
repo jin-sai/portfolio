@@ -24,10 +24,10 @@ const PROJECTS = [
     year: '2021',
 
     links: [
-      { label: '⌥ github', href: '#' },
+      { label: '⌥ github', href: 'https://github.com/jin-sai/payments_app' },
     ],
   },
-  
+
   {
     title:   'Housie Game Android App',
     tags:    ['Java', 'Android Studio', 'Google Play Store'],
