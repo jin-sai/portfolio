@@ -7,36 +7,25 @@
 const EXPERIENCE = [
 
   {
-    period:  '2022 — present',
-    role:    'Senior Backend Engineer',
-    company: 'Meridian Labs — San Francisco, CA',
-    points: [
-      'Monolith → microservices: deploy time <strong>4 h → 8 min</strong>',
-      'Multi-region active-active on AWS: <strong>99.95% SLA</strong>, 2M+ DAUs',
-      'Mentored 5 engineers; ADRs & RFCs cut re-work by 35%',
-      'Reduced cloud spend by <strong>$180K/yr</strong>',
-    ],
-  },
-
-  {
-    period:  '2020 — 2022',
-    role:    'Backend Engineer',
-    company: 'Vantage Systems — Remote',
-    points: [
-      'Real-time bidding engine in Go: <strong>50K concurrent connections</strong>, sub-10ms',
-      'Data pipeline: 200M events/day → ClickHouse',
-      'GDPR deletion workflows across 12M user records',
-    ],
-  },
-
-  {
-    period:  '2018 — 2020',
+    period:  'Aug 2021 — Apr 2025',
     role:    'Software Engineer',
-    company: 'Stacknode Inc. — Bengaluru, India',
+    company: 'Cisco — Bengaluru, India',
     points: [
-      'REST & GraphQL APIs: <strong>3M+ requests/day</strong>',
-      'Redis cache layer: 68% response time reduction',
-      'Internal CLI tooling adopted by 40-person eng org',
+      'Designed and developed <strong>25+ event-driven microservices</strong> using Java, Spring Boot and TDD, processing <strong>4B+ Webex calling events daily</strong>',
+      'Deployed across <strong>4 distributed Kubernetes clusters</strong> using Helm and Argo, ensuring 99.99% uptime and low-latency data pipelines',
+      'Implemented observability with Prometheus and Grafana, supporting a strict <strong>5-minute SLA</strong> for customer-facing reports',
+      'Built a recovery tool to reprocess failed OpenSearch records via Kafka, recovering <strong>10M+ critical reports</strong> lost to Kafka lag',
+      'Migrated backend systems to Kubernetes, transitioning from Elasticsearch to OpenSearch and containerizing with Docker and Helm',
+    ],
+  },
+
+  {
+    period:  'Feb 2019 — Jul 2019',
+    role:    'Engineering Officer',
+    company: 'Central Power Research Institute — Bengaluru, India',
+    points: [
+      'Led a team of 1 trainee and 4 contract engineers to maintain and optimize IT infrastructure',
+      'Streamlined issue resolution and ensured high system uptime across the organization',
     ],
   },
 

@@ -14,7 +14,7 @@ const PERSONAL = {
   // ── Contact ──
   email:    'saikumarj.63@gmail.com',
   github:   'github.com/jin-sai',
-  linkedin: 'linkedin.com/in/saikumar-pulidindi',
+  linkedin: 'linkedin.com/saikumar-pulidindi',
 
   // ── Nav status badge ──
   statusText: 'Open to work',
@@ -23,7 +23,7 @@ const PERSONAL = {
   heroLine1:  'Building systems',
   heroLine2:  'that scale.',          // rendered in green
   heroTagline: '# Backend Developer',
-  heroDesc:    '6+ years designing distributed\nsystems, high-throughput APIs, and cloud infrastructure for millions.',
+  heroDesc:    '4+ years designing distributed microservices\nand event-driven systems at Cisco. Java · Spring Boot · Kafka · Kubernetes.',
 
   // ── CTA buttons ──
   ctas: [

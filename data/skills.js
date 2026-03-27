@@ -9,34 +9,34 @@ const SKILLS = {
   // Each entry renders as a card with a title and a row of pills.
   groups: [
     {
-      title: 'languages',
-      pills: ['Go', 'Python', 'TypeScript', 'Rust', 'SQL', 'Bash'],
+      title: 'languages & frameworks',
+      pills: ['Java', 'Spring Boot', 'Python', 'C', 'C++'],
     },
     {
-      title: 'databases',
-      pills: ['PostgreSQL', 'Redis', 'MongoDB', 'Cassandra', 'ClickHouse'],
+      title: 'devops & tools',
+      pills: ['Kubernetes', 'Docker', 'Helm', 'Argo', 'Git'],
     },
     {
-      title: 'infrastructure',
-      pills: ['AWS', 'GCP', 'Kubernetes', 'Docker', 'Terraform'],
+      title: 'data & messaging',
+      pills: ['Kafka', 'OpenSearch', 'Elasticsearch'],
     },
     {
-      title: 'messaging',
-      pills: ['Kafka', 'RabbitMQ', 'NATS', 'SQS'],
+      title: 'software development',
+      pills: ['Microservices', 'System Design', 'CI/CD', 'Agile', 'TDD'],
     },
     {
-      title: 'apis & protocols',
-      pills: ['REST', 'GraphQL', 'gRPC', 'WebSockets'],
+      title: 'observability',
+      pills: ['Prometheus', 'Grafana'],
     },
   ],
 
   // ── Proficiency bars ──
   // Each entry shows a labelled progress bar (value 0–100).
   proficiency: [
-    { label: 'System Design', value: 95 },
-    { label: 'Go / Python',   value: 92 },
-    { label: 'Cloud Infra',   value: 88 },
-    { label: 'Databases',     value: 85 },
+    { label: 'Java / Spring Boot', value: 95 },
+    { label: 'Kafka / Messaging',  value: 90 },
+    { label: 'Kubernetes / Docker', value: 88 },
+    { label: 'System Design',      value: 85 },
   ],
 
 };
