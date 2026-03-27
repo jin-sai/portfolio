@@ -35,7 +35,7 @@ const TERMINAL_FS = {
       ['cg', '# about.md — Alex Rowe'],
       ['tb', ''],
       ['cw', 'Name   : Alex Rowe'],
-      ['cw', 'Role   : Senior Backend Engineer'],
+      ['cw', 'Role   : Backend Developer'],
       ['cw', 'Based  : San Francisco, CA'],
       ['cw', 'Focus  : Distributed systems · APIs · Cloud Infra'],
       ['tb', ''],
@@ -124,7 +124,7 @@ const TERMINAL_FS = {
 
       'meridian-labs.md': { type: 'file', content: [
         ['cg', '# Meridian Labs'],
-        ['ca', 'Role   : Senior Backend Engineer'],
+        ['ca', 'Role   : Backend Developer'],
         ['cd', 'Period : 2022 — present · San Francisco'],
         ['tb', ''],
         ['cw', '→ Deploy time 4h → 8min (monolith→microservices)'],
