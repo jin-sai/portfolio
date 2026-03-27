@@ -32,14 +32,16 @@ const PROJECTS = [
 
     problem: 'A local badminton court caretaker was logging every transaction and expense on paper — spending 15+ minutes daily summing up totals with no way to track revenue trends or analyse profits over time.',
 
-    built:   'A Flutter Android app with a Firebase/Firestore backend. The caretaker logs each transaction and expense through a simple UI. The app auto-totals everything and generates reports to analyse revenue, expenses, and profit over any period.',
+    built:   'Built an internal Android app using Flutter and Firebase that lets the caretaker log bookings, sales and expenses on the go. Profit-per-item tracking influenced inventory decisions and payment reminders ensured no dues slipped through. Generates daily and monthly reports with zero manual math.',
 
     metrics: [
-      { value: 'live',   label: 'in production' },
-      { value: '15 min', label: 'saved daily on manual tallying' },
+      { value: '₹80K/mo', label: 'revenue tracked' },
+      { value: '2 years',  label: 'in production' },
+      { value: '206+ hrs', label: 'saved over 2 years' },
+      { value: '₹0',       label: 'hosting cost' },
     ],
 
-    year: '2024',
+    year: '2021',
 
     links: [
       { label: '⌥ github', href: '#' },
