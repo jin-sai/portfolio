@@ -1,0 +1,109 @@
+/* ════════════════════════════════════════
+   base.css — design tokens, reset, nav, layout
+   ════════════════════════════════════════ */
+
+/* ── Design tokens ── */
+:root {
+  --bg:      #0a0a0a;
+  --bg2:     #111;
+  --bg3:     #161616;
+  --green:   #00ff88;
+  --green-m: rgba(0,255,136,0.12);
+  --green-g: rgba(0,255,136,0.06);
+  --amber:   #ffb800;
+  --red:     #ff4d4d;
+  --blue:    #4d9eff;
+  --muted:   #444;
+  --muted2:  #2a2a2a;
+  --text:    #c8c8c8;
+  --dim:     #666;
+  --border:  rgba(0,255,136,0.12);
+  --mono:    'JetBrains Mono', monospace;
+  --display: 'Syne', sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── Custom cursor (desktop only — JS activates) ── */
+#cur, #cur-t {
+  position: fixed; pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%); display: none;
+}
+#cur  { width: 11px; height: 11px; background: var(--green); mix-blend-mode: screen; transition: transform .05s; }
+#cur-t { width: 30px; height: 30px; border: 1px solid rgba(0,255,136,.3); z-index: 9998; transition: left .12s, top .12s; }
+
+/* ── Scanline + grid overlays ── */
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 200;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 2px, rgba(0,0,0,.07) 2px, rgba(0,0,0,.07) 4px);
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image: linear-gradient(rgba(0,255,136,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 16px 48px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(10,10,10,.88); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { color: var(--green); font-size: 13px; font-weight: 600; }
+.nav-logo span { color: var(--dim); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { color: var(--dim); text-decoration: none; font-size: 12px; transition: color .2s; }
+.nav-links a::before { content: './'; color: var(--muted); }
+.nav-links a:hover { color: var(--green); }
+.nav-status { display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--dim); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2.5s ease-in-out infinite; }
+@keyframes pulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,255,136,.4); }
+  50%      { opacity: .7; box-shadow: 0 0 0 5px rgba(0,255,136,0); }
+}
+
+/* ── Layout helpers ── */
+main  { position: relative; z-index: 1; }
+section { padding: 96px 0; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+.sec-lbl {
+  font-size: 11px; color: var(--dim); letter-spacing: .15em; text-transform: uppercase;
+  margin-bottom: 44px; display: flex; align-items: center; gap: 14px;
+}
+.sec-lbl::before { content: '//'; color: var(--green); font-weight: 600; }
+.sec-lbl::after  { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── Scroll reveal ── */
+.rev { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.rev.in { opacity: 1; transform: none; }
+
+/* ── Shared buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 11px 22px; font-family: var(--mono); font-size: 12px;
+  letter-spacing: .07em; text-decoration: none; border-radius: 2px;
+  transition: all .2s; -webkit-tap-highlight-color: transparent;
+}
+.btn-p { background: var(--green); color: #000; font-weight: 700; }
+.btn-p:hover { background: #fff; box-shadow: 0 0 28px rgba(0,255,136,.3); }
+.btn-g { color: var(--green); border: 1px solid var(--border); }
+.btn-g:hover { border-color: var(--green); background: var(--green-m); }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border); padding: 22px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 11px; color: var(--dim); position: relative; z-index: 1;
+}
+footer span { color: var(--green); }

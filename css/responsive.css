@@ -1,0 +1,86 @@
+/* ════════════════════════════════════════
+   responsive.css — mobile breakpoints
+
+   Problems fixed (documented for reference):
+   1.  cursor:none breaks touch → JS only enables on hover devices
+   2.  input font-size 13px → iOS zoom → 16px + scale(0.8125) trick
+   3.  ASCII art overflows <640px → swap to compact text banner
+   4.  Prompt "alex@macbook:~/portfolio $" too wide → hide user@host
+   5.  nav padding 48px squishes content → reduced
+   6.  .wrap padding 48px overflows 375px → 18px
+   7.  3-col skills grid unusable at 375px → 2-col → 1-col
+   8.  2-col about/contact grids break at 768px → 1-col
+   9.  max-height:340px output too tall with keyboard open → 200px
+  10.  white-space:pre-wrap + long lines scroll → break-word
+  11.  .term-shell max-width clips → 100%
+  12.  footer horizontal layout wraps → column on mobile
+  13.  tap-highlight on buttons/cards → -webkit-tap-highlight-color
+  14.  No cue to tap terminal on touch → "tap here" hint shown
+  15.  section padding 96px wastes vertical space → 60px
+   ════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+
+  /* Nav */
+  nav          { padding: 13px 18px; }
+  .nav-links   { display: none; }
+  .nav-status  { font-size: 10px; }
+
+  /* Layout */
+  .wrap        { padding: 0 18px; }
+  section      { padding: 60px 0; }
+  .sec-lbl     { margin-bottom: 28px; font-size: 10px; }
+
+  /* Terminal */
+  .term-shell  { border-radius: 4px; }
+  .term-bar    { padding: 9px 13px; }
+  .term-title  { font-size: 10px; }
+  #tout        { padding: 14px 16px 0; max-height: 200px; }
+  .tl          { font-size: 12px; }
+  #thint       { padding: 2px 16px 5px; font-size: 10px; }
+  #tinrow      { padding: 8px 16px 13px; }
+  .tp          { font-size: 12px; }
+  .tp-user     { display: none; }                        /* hide "alex@macbook" */
+  #tin         { font-size: 16px; transform: scale(.8125); width: 125%; }
+  .tap-hint    { display: block; }                       /* show tap hint on touch */
+
+  /* Hero */
+  .hero-name   { margin-top: 28px; }
+  .hero-tag    { font-size: 12px; }
+  .ctas        { gap: 10px; }
+  .btn         { padding: 10px 18px; font-size: 11px; }
+
+  /* About */
+  .about-grid  { grid-template-columns: 1fr; gap: 16px; }
+  .about-card  { padding: 20px 18px; }
+
+  /* Skills */
+  .skills-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sg          { padding: 18px 16px; }
+
+  /* Projects */
+  .proj-hd     { padding: 16px 18px; flex-wrap: wrap; gap: 8px; }
+  .proj-hd-l   { flex-wrap: wrap; gap: 8px; }
+  .proj-body   { padding: 0 18px 20px; }
+  .proj-metrics { gap: 14px 20px; }
+
+  /* Experience */
+  .exp-item    { padding: 0 0 28px 22px; }
+  .exp-role    { font-size: 13px; }
+
+  /* Contact */
+  .contact-block { grid-template-columns: 1fr; gap: 24px; padding: 24px 18px; }
+  .contact-hd  { font-size: 26px; }
+
+  /* Footer */
+  footer       { padding: 18px; flex-direction: column; gap: 7px; text-align: center; }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .proj-tags   { display: none; }
+  .hero-name   { letter-spacing: -.04em; }
+  #tout        { max-height: 160px; }
+}

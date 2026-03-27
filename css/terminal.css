@@ -1,0 +1,95 @@
+/* ════════════════════════════════════════
+   terminal.css — interactive terminal shell styles
+   ════════════════════════════════════════ */
+
+/* ── Hero section ── */
+#hero { min-height: 100vh; display: flex; align-items: center; padding-top: 72px; }
+
+/* ── Terminal shell chrome ── */
+.term-shell {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 6px;
+  overflow: hidden; width: 100%; max-width: 820px;
+  box-shadow: 0 0 60px rgba(0,255,136,.04), 0 0 0 1px rgba(0,255,136,.04);
+}
+.term-bar {
+  background: var(--bg3); padding: 11px 16px;
+  display: flex; align-items: center; gap: 7px;
+  border-bottom: 1px solid var(--border); user-select: none;
+}
+.dot-r { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; flex-shrink: 0; }
+.dot-y { width: 11px; height: 11px; border-radius: 50%; background: #ffbd2e; flex-shrink: 0; }
+.dot-g { width: 11px; height: 11px; border-radius: 50%; background: #28c840; flex-shrink: 0; }
+.term-title {
+  margin-left: 6px; font-size: 11px; color: var(--dim); letter-spacing: .06em;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+
+/* ── Output area ── */
+#tout {
+  padding: 18px 22px 0;
+  max-height: 340px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#tout::-webkit-scrollbar { width: 3px; }
+#tout::-webkit-scrollbar-thumb { background: rgba(0,255,136,.18); }
+
+/* Output line classes */
+.tl { font-size: 13px; line-height: 1.62; white-space: pre-wrap; word-break: break-word; margin-bottom: 1px; }
+.tb { height: 7px; }
+
+/* Terminal colour helpers */
+.cg { color: var(--green); }
+.ca { color: var(--amber); }
+.cr { color: var(--red);   }
+.cb { color: var(--blue);  }
+.cd { color: var(--dim);   }
+.cw { color: #fff;         }
+
+/* ── Tab-completion hint ── */
+#thint { padding: 2px 22px 6px; font-size: 11px; color: var(--dim); min-height: 18px; word-break: break-all; }
+
+/* ── Input row ── */
+#tinrow {
+  display: flex; align-items: center; flex-wrap: nowrap;
+  padding: 9px 22px 16px; gap: 0;
+  border-top: 1px solid rgba(0,255,136,.07); margin-top: 8px;
+  overflow: hidden;
+}
+.tp { font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+.tp-user { color: var(--green); }
+.tp-sep  { color: var(--dim); }
+.tp-path { color: var(--blue); }
+
+/* 16px prevents iOS auto-zoom; transform makes it look 13px visually */
+#tin {
+  background: transparent; border: none; outline: none;
+  color: var(--text); font-family: var(--mono);
+  font-size: 16px;
+  transform: scale(0.8125);
+  transform-origin: left center;
+  width: 125%;
+  flex: 1; min-width: 0;
+  caret-color: var(--green);
+  -webkit-appearance: none;
+}
+
+/* Mobile tap hint */
+.tap-hint {
+  display: none;
+  text-align: center; padding: 10px 0 14px;
+  font-size: 11px; color: var(--dim); letter-spacing: .08em;
+  cursor: pointer;
+}
+
+/* ── Hero text below terminal ── */
+.hero-name {
+  font-family: var(--display);
+  font-size: clamp(40px, 7vw, 82px);
+  font-weight: 800; color: #fff; line-height: .92;
+  letter-spacing: -.03em; margin-top: 44px;
+}
+.hero-name em { font-style: normal; color: var(--green); display: block; text-shadow: 0 0 60px rgba(0,255,136,.22); }
+.hero-tag { margin-top: 22px; color: var(--dim); font-size: 13px; max-width: 480px; line-height: 1.85; }
+.hero-tag span { color: var(--green); }
+.ctas { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
