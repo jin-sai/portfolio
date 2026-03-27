@@ -37,7 +37,7 @@ function renderHero() {
           <div class="term-shell" id="term-shell">
             <div class="term-bar">
               <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
-              <span class="term-title" id="tbar-title">${PERSONAL.username}: ~/portfolio</span>
+              <span class="term-title" id="tbar-title">Terminal</span>
             </div>
             <div id="tout"></div>
             <div id="thint"></div>

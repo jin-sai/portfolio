@@ -9,7 +9,7 @@ const PERSONAL = {
   // ── Identity ──
   name:     'Sai Kumar Pulidindi',
   handle:   'saikumar_pulidindi',       // shown in nav logo and footer
-  username: 'saikumar_pulidindi@macbook',    // shown in terminal prompt
+  username: 'saikumar_pulidindi@terminal',    // shown in terminal prompt
 
   // ── Nav status badge ──
   statusText: 'Open to work',
