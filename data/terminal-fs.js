@@ -14,22 +14,7 @@
 const TERMINAL_FS = {
   'portfolio': { type: 'dir', children: {
 
-    'readme.md': { type: 'file', content: [
-      ['cg', '# readme.md'],
-      ['tb', ''],
-      ['cw', "Welcome to Alex Rowe's portfolio terminal."],
-      ['tb', ''],
-      ['cd', 'Navigate using standard Unix shell commands.'],
-      ['tb', ''],
-      ['ca', 'Files:'],
-      ['cw', '  about.md    skills.md    contact.md'],
-      ['tb', ''],
-      ['ca', 'Directories:'],
-      ['cw', '  projects/   experience/'],
-      ['tb', ''],
-      ['cd', 'Try: ls, cat about.md, cd projects, tree'],
-      ['cd', 'Tab autocompletes · ↑↓ scrolls history'],
-    ]},
+    'readme.md': { type: 'file', content: [] },  // populated dynamically below
 
     'about.md': { type: 'file', content: [
       ['cg', '# about.md — Alex Rowe'],
@@ -157,3 +142,27 @@ const TERMINAL_FS = {
 
   }}
 };
+
+// ── Auto-generate readme.md from the actual filesystem structure ──
+// Add files/dirs to TERMINAL_FS above and this updates automatically.
+(function () {
+  const dir   = TERMINAL_FS['portfolio'].children;
+  const files = Object.keys(dir).filter(k => dir[k].type === 'file' && k !== 'readme.md');
+  const dirs  = Object.keys(dir).filter(k => dir[k].type === 'dir');
+  dir['readme.md'].content = [
+    ['cg', '# readme.md'],
+    ['tb', ''],
+    ['cw', "Welcome to Sai Kumar's portfolio terminal."],
+    ['tb', ''],
+    ['cd', 'Navigate using standard Unix shell commands.'],
+    ['tb', ''],
+    ['ca', 'Files:'],
+    ['cw', '  ' + files.join('    ')],
+    ['tb', ''],
+    ['ca', 'Directories:'],
+    ['cw', '  ' + dirs.map(d => d + '/').join('   ')],
+    ['tb', ''],
+    ['cd', 'Try: ls, cat about.md, cd projects, tree'],
+    ['cd', 'Tab autocompletes · ↑↓ scrolls history'],
+  ];
+})();
