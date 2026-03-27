@@ -17,9 +17,9 @@ const TERMINAL_FS = {
     'readme.md': { type: 'file', content: [] },  // populated dynamically below
 
     'about.md': { type: 'file', content: [
-      ['cg', '# about.md — Alex Rowe'],
+      ['cg', '# about.md — Sai Kumar Pulidindi'],
       ['tb', ''],
-      ['cw', 'Name   : Alex Rowe'],
+      ['cw', 'Name   : Sai Kumar Pulidindi'],
       ['cw', 'Role   : Backend Developer'],
       ['cw', 'Based  : San Francisco, CA'],
       ['cw', 'Focus  : Distributed systems · APIs · Cloud Infra'],
