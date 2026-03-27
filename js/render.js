@@ -133,7 +133,7 @@ function renderProjects() {
     const metricsHTML = p.metrics.map(m => `
       <div class="pm"><span class="pm-v">${m.value}</span><span class="pm-l">${m.label}</span></div>
     `).join('');
-    const linksHTML = p.links.map(l => `<a href="${l.href}" class="plink">${l.label}</a>`).join('');
+    const linksHTML = p.links.map(l => `<a href="${l.href}" class="plink" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join('');
     const mt = i === 0 ? '' : ' style="margin-top:2px"';
 
     return `

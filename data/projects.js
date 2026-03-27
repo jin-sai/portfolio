@@ -8,21 +8,21 @@ const PROJECTS = [
 
   {
     title:   'Housie Game Android App',
-    tags:    ['Java', 'Android Studio', 'Google Play'],
+    tags:    ['Java', 'Android Studio', 'Google Play Store'],
 
-    problem: 'Playing Housie (Tambola) at family gatherings meant someone had to manually draw numbers and track tickets by hand — slow, error-prone, and not fun for the person running it.',
+    problem: 'During COVID, our building tenants had a ritual - gathering on the terrace every evening for a Housie game. What we didn\'t have was Housie books. Lockdown created shortage of housie books in my town.',
 
-    built:   'An offline Android app that auto-generates randomized Housie tickets, calls numbers with animations, and tracks wins across patterns. Built in Java with Android Studio, fully offline — no internet required.',
+    built:   'An offline Android app that auto-generates randomized Housie tickets, calls numbers aloud at configurable speed. No housie books, no coins, no dedicated caller needed.',
 
     metrics: [
-      { value: '10K+', label: 'organic installs' },
+      { value: '5K+', label: 'downloads' },
       { value: '100%', label: 'offline' },
     ],
 
-    year: '2023',
+    year: '2020',
 
     links: [
-      { label: '⌥ play store', href: '#' },
+      { label: '⌥ play store', href: 'https://play.google.com/store/apps/details?id=com.app.sai_housie'},
     ],
   },
 
