@@ -18,119 +18,79 @@ const TERMINAL_FS = {
 
     'about.md': { type: 'file', content: [] },  // populated dynamically below
 
-    'skills.md': { type: 'file', content: [
-      ['cg', '# skills.md — Tech Stack'],
-      ['tb', ''],
-      ['ca', 'Languages   :'], ['cw', '  Go · Python · TypeScript · Rust · SQL'],
-      ['tb', ''],
-      ['ca', 'Databases   :'], ['cw', '  PostgreSQL · Redis · MongoDB · ClickHouse'],
-      ['tb', ''],
-      ['ca', 'Infra       :'], ['cw', '  AWS · GCP · Kubernetes · Docker · Terraform'],
-      ['tb', ''],
-      ['ca', 'Messaging   :'], ['cw', '  Kafka · RabbitMQ · NATS · SQS'],
-      ['tb', ''],
-      ['ca', 'APIs        :'], ['cw', '  REST · GraphQL · gRPC · WebSockets'],
-    ]},
-
-    'contact.md': { type: 'file', content: [
-      ['cg', '# contact.md'],
-      ['tb', ''],
-      ['cw', 'Email    : alex@example.com'],
-      ['cw', 'GitHub   : github.com/alexrowe'],
-      ['cw', 'LinkedIn : linkedin.com/in/alexrowe'],
-      ['tb', ''],
-      ['cg', '● Open to senior / staff / founding eng roles'],
-      ['tb', ''],
-      ['cd', 'Response time: usually within 24 hours.'],
-    ]},
-
-    'projects': { type: 'dir', children: {
-
-      'flux-gateway.md': { type: 'file', content: [
-        ['cg', '# FluxGateway'],
-        ['ca', 'Stack : Go · Redis · gRPC · Kubernetes'],
-        ['tb', ''],
-        ['cw', 'API gateway: auth, rate limiting, circuit breaking'],
-        ['cw', 'across 30+ microservices.'],
-        ['tb', ''],
-        ['cg', 'Metrics:'],
-        ['cw', '  Throughput : 2M+ req/day'],
-        ['cw', '  p99        : < 8ms'],
-        ['cw', '  Uptime     : 99.99%'],
-        ['cw', '  Cost saved : 40%'],
-        ['tb', ''],
-        ['cb', '  github.com/alexrowe/flux-gateway'],
-      ]},
-
-      'eventstream.md': { type: 'file', content: [
-        ['cg', '# EventStream Engine'],
-        ['ca', 'Stack : Python · Kafka · PostgreSQL · AWS'],
-        ['tb', ''],
-        ['cw', 'Real-time pipeline: 500K+ events/min,'],
-        ['cw', 'schema evolution, DLQs, full replay.'],
-        ['tb', ''],
-        ['cg', 'Metrics:'],
-        ['cw', '  Throughput : 500K+ events/min'],
-        ['cw', '  Data loss  : 0 incidents (was 4/mo)'],
-        ['cw', '  Latency    : 3ms avg'],
-        ['tb', ''],
-        ['cb', '  github.com/alexrowe/eventstream'],
-      ]},
-
-      'query-optimizer.md': { type: 'file', content: [
-        ['cg', '# QueryOptimizer CLI'],
-        ['ca', 'Stack : Rust · PostgreSQL · WASM'],
-        ['tb', ''],
-        ['cw', 'CLI detecting N+1, missing indexes, slow joins.'],
-        ['cw', 'Generates migration scripts. Runs in CI as WASM.'],
-        ['tb', ''],
-        ['cg', 'Metrics:'],
-        ['cw', '  Users    : 800+ developers'],
-        ['cw', '  Stars    : 1.2K ⭐'],
-        ['cw', '  Speedup  : 60% avg'],
-        ['tb', ''],
-        ['cb', '  github.com/alexrowe/query-optimizer'],
-      ]},
-
-    }},
-
-    'experience': { type: 'dir', children: {
-
-      'meridian-labs.md': { type: 'file', content: [
-        ['cg', '# Meridian Labs'],
-        ['ca', 'Role   : Backend Developer'],
-        ['cd', 'Period : 2022 — present · San Francisco'],
-        ['tb', ''],
-        ['cw', '→ Deploy time 4h → 8min (monolith→microservices)'],
-        ['cw', '→ 99.95% SLA, 2M+ DAUs on multi-region AWS'],
-        ['cw', '→ Mentored 5 engineers; cut re-work 35%'],
-        ['cw', '→ $180K/yr cloud savings'],
-      ]},
-
-      'vantage-systems.md': { type: 'file', content: [
-        ['cg', '# Vantage Systems'],
-        ['ca', 'Role   : Backend Engineer'],
-        ['cd', 'Period : 2020 — 2022 · Remote'],
-        ['tb', ''],
-        ['cw', '→ Bidding engine: 50K concurrent, sub-10ms'],
-        ['cw', '→ 200M events/day pipeline → ClickHouse'],
-        ['cw', '→ GDPR deletion: 12M user records'],
-      ]},
-
-      'stacknode.md': { type: 'file', content: [
-        ['cg', '# Stacknode Inc.'],
-        ['ca', 'Role   : Software Engineer'],
-        ['cd', 'Period : 2018 — 2020 · Bengaluru, India'],
-        ['tb', ''],
-        ['cw', '→ REST & GraphQL: 3M+ req/day'],
-        ['cw', '→ Redis cache: 68% faster responses'],
-        ['cw', '→ CLI tooling for 40-person eng org'],
-      ]},
-
-    }},
+    'skills.md':  { type: 'file', content: [] },  // populated dynamically below
+    'contact.md': { type: 'file', content: [] },  // populated dynamically below
+    'projects':   { type: 'dir',  children: {} }, // populated dynamically below
+    'experience': { type: 'dir',  children: {} }, // populated dynamically below
 
   }}
 };
+
+// ── Shared helper ──
+function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.md'; }
+
+// ── Auto-generate skills.md from data/skills.js ──
+(function () {
+  const lines = [['cg', '# skills.md — Tech Stack'], ['tb', '']];
+  SKILLS.groups.forEach(g => {
+    lines.push(['ca', g.title + ' :']);
+    lines.push(['cw', '  ' + g.pills.join(' · ')]);
+    lines.push(['tb', '']);
+  });
+  TERMINAL_FS['portfolio'].children['skills.md'].content = lines;
+})();
+
+// ── Auto-generate contact.md from data/personal.js ──
+(function () {
+  TERMINAL_FS['portfolio'].children['contact.md'].content = [
+    ['cg', '# contact.md'],
+    ['tb', ''],
+    ['cw', 'Email    : ' + PERSONAL.email],
+    ['cw', 'GitHub   : ' + PERSONAL.github],
+    ['cw', 'LinkedIn : ' + PERSONAL.linkedin],
+    ['tb', ''],
+    ['cg', '● ' + PERSONAL.statusText],
+    ['tb', ''],
+    ['cd', 'Response time: usually within 24 hours.'],
+  ];
+})();
+
+// ── Auto-generate projects/ from data/projects.js ──
+(function () {
+  const dir = TERMINAL_FS['portfolio'].children['projects'].children;
+  PROJECTS.forEach(p => {
+    const content = [
+      ['cg', '# ' + p.title],
+      ['ca', 'Stack : ' + p.tags.join(' · ')],
+      ['tb', ''],
+      ...p.desc.replace(/<[^>]+>/g, '').match(/.{1,52}(\s|$)/g).map(l => ['cw', l.trim()]),
+      ['tb', ''],
+      ['cg', 'Metrics:'],
+      ...p.metrics.map(m => ['cw', '  ' + (m.value + ' ' + m.label)]),
+    ];
+    const githubLink = p.links.find(l => l.label.includes('github') && l.href !== '#');
+    if (githubLink) content.push(['tb', ''], ['cb', '  ' + githubLink.href]);
+    dir[_slug(p.title)] = { type: 'file', content };
+  });
+})();
+
+// ── Auto-generate experience/ from data/experience.js ──
+(function () {
+  const dir = TERMINAL_FS['portfolio'].children['experience'].children;
+  EXPERIENCE.forEach(e => {
+    const parts   = e.company.split('—');
+    const company = parts[0].trim();
+    const location = parts[1] ? parts[1].trim() : '';
+    const content = [
+      ['cg', '# ' + company],
+      ['ca', 'Role   : ' + e.role],
+      ['cd', 'Period : ' + e.period + (location ? ' · ' + location : '')],
+      ['tb', ''],
+      ...e.points.map(pt => ['cw', '→ ' + pt.replace(/<[^>]+>/g, '')]),
+    ];
+    dir[_slug(company)] = { type: 'file', content };
+  });
+})();
 
 // ── Auto-generate about.md from data/about.js + data/personal.js ──
 (function () {

@@ -11,6 +11,11 @@ const PERSONAL = {
   handle:   'saikumar_pulidindi',       // shown in nav logo and footer
   username: 'saikumar_pulidindi@terminal',    // shown in terminal prompt
 
+  // ── Contact ──
+  email:    'saikumarj.63@gmail.com',
+  github:   'github.com/jin-sai',
+  linkedin: 'linkedin.com/in/saikumar-pulidindi',
+
   // ── Nav status badge ──
   statusText: 'Open to work',
 
