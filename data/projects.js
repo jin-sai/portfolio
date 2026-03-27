@@ -7,6 +7,28 @@
 const PROJECTS = [
 
   {
+    title:   'Badminton Court Manager',
+    tags:    ['Flutter', 'Dart', 'Firebase', 'Firestore'],
+
+    problem: 'A local badminton court caretaker was logging every transaction and expense on paper — spending 15+ minutes daily summing up totals with no way to track revenue trends or analyse profits over time.',
+
+    built:   'Built an internal Android app using Flutter and Firebase that lets the caretaker log bookings, sales and expenses on the go. Profit-per-item tracking influenced inventory decisions and payment reminders ensured no dues slipped through. Generates daily and monthly reports with zero manual math.',
+
+    metrics: [
+      { value: '₹80K/mo', label: 'revenue tracked' },
+      { value: '2 years',  label: 'in production' },
+      { value: '206+ hrs', label: 'of manual work saved' },
+      { value: '₹0',       label: 'hosting cost' },
+    ],
+
+    year: '2021',
+
+    links: [
+      { label: '⌥ github', href: '#' },
+    ],
+  },
+  
+  {
     title:   'Housie Game Android App',
     tags:    ['Java', 'Android Studio', 'Google Play Store'],
 
@@ -23,28 +45,6 @@ const PROJECTS = [
 
     links: [
       { label: '⌥ play store', href: 'https://play.google.com/store/apps/details?id=com.app.sai_housie'},
-    ],
-  },
-
-  {
-    title:   'Badminton Court Manager',
-    tags:    ['Flutter', 'Dart', 'Firebase', 'Firestore'],
-
-    problem: 'A local badminton court caretaker was logging every transaction and expense on paper — spending 15+ minutes daily summing up totals with no way to track revenue trends or analyse profits over time.',
-
-    built:   'Built an internal Android app using Flutter and Firebase that lets the caretaker log bookings, sales and expenses on the go. Profit-per-item tracking influenced inventory decisions and payment reminders ensured no dues slipped through. Generates daily and monthly reports with zero manual math.',
-
-    metrics: [
-      { value: '₹80K/mo', label: 'revenue tracked' },
-      { value: '2 years',  label: 'in production' },
-      { value: '206+ hrs', label: 'saved over 2 years' },
-      { value: '₹0',       label: 'hosting cost' },
-    ],
-
-    year: '2021',
-
-    links: [
-      { label: '⌥ github', href: '#' },
     ],
   },
 
