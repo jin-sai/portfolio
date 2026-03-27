@@ -30,13 +30,13 @@ const PROJECTS = [
     title:   'Badminton Court Manager',
     tags:    ['Flutter', 'Dart', 'Firebase', 'Firestore'],
 
-    problem: 'A local badminton court was tracking daily bookings, sales, and expenses in a paper register — leading to double-bookings, lost records, and no visibility into revenue.',
+    problem: 'A local badminton court caretaker was logging every transaction and expense on paper — spending 15+ minutes daily summing up totals with no way to track revenue trends or analyse profits over time.',
 
-    built:   'A Flutter Android app with a Firebase/Firestore backend. Supports real-time slot booking, sales logging, and expense tracking. Deployed and actively used by the court to run daily operations.',
+    built:   'A Flutter Android app with a Firebase/Firestore backend. The caretaker logs each transaction and expense through a simple UI. The app auto-totals everything and generates reports to analyse revenue, expenses, and profit over any period.',
 
     metrics: [
-      { value: 'live', label: 'in production' },
-      { value: '0',    label: 'double-bookings since launch' },
+      { value: 'live',   label: 'in production' },
+      { value: '15 min', label: 'saved daily on manual tallying' },
     ],
 
     year: '2024',
