@@ -59,14 +59,18 @@ function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
 (function () {
   const dir = TERMINAL_FS['portfolio'].children['projects'].children;
   PROJECTS.forEach(p => {
+    const strip = s => s.replace(/<[^>]+>/g, '');
+    const wrap  = s => strip(s).match(/.{1,52}(\s|$)/g).map(l => ['cw', l.trim()]);
     const content = [
-      ['cg', '# ' + p.title],
+      ['cg', '# ' + p.title + '  (' + p.year + ')'],
       ['ca', 'Stack : ' + p.tags.join(' · ')],
       ['tb', ''],
-      ...p.desc.replace(/<[^>]+>/g, '').match(/.{1,52}(\s|$)/g).map(l => ['cw', l.trim()]),
+      ['cd', 'problem :'], ...wrap(p.problem),
       ['tb', ''],
-      ['cg', 'Metrics:'],
-      ...p.metrics.map(m => ['cw', '  ' + (m.value + ' ' + m.label)]),
+      ['cd', 'built   :'], ...wrap(p.built),
+      ['tb', ''],
+      ['cg', 'impact  :'],
+      ...p.metrics.map(m => ['cw', '  ' + m.value + '  ' + m.label]),
     ];
     const githubLink = p.links.find(l => l.label.includes('github') && l.href !== '#');
     if (githubLink) content.push(['tb', ''], ['cb', '  ' + githubLink.href]);
