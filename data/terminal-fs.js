@@ -16,18 +16,7 @@ const TERMINAL_FS = {
 
     'readme.md': { type: 'file', content: [] },  // populated dynamically below
 
-    'about.md': { type: 'file', content: [
-      ['cg', '# about.md — Sai Kumar Pulidindi'],
-      ['tb', ''],
-      ['cw', 'Name   : Sai Kumar Pulidindi'],
-      ['cw', 'Role   : Backend Developer'],
-      ['cw', 'Based  : San Francisco, CA'],
-      ['cw', 'Focus  : Distributed systems · APIs · Cloud Infra'],
-      ['tb', ''],
-      ['cd', 'I build the invisible infrastructure that makes'],
-      ['cd', 'products fast, reliable, and resilient.'],
-      ['cd', '6+ years shipping systems that scale to millions.'],
-    ]},
+    'about.md': { type: 'file', content: [] },  // populated dynamically below
 
     'skills.md': { type: 'file', content: [
       ['cg', '# skills.md — Tech Stack'],
@@ -142,6 +131,22 @@ const TERMINAL_FS = {
 
   }}
 };
+
+// ── Auto-generate about.md from data/about.js + data/personal.js ──
+(function () {
+  const bioText = ABOUT.bio.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const role    = PERSONAL.heroTagline.replace('# ', '');
+  TERMINAL_FS['portfolio'].children['about.md'].content = [
+    ['cg', '# about.md — ' + PERSONAL.name],
+    ['tb', ''],
+    ['cw', 'Name   : ' + PERSONAL.name],
+    ['cw', 'Role   : ' + role],
+    ['cw', 'Based  : ' + ABOUT.location],
+    ['cw', 'Focus  : ' + ABOUT.focus],
+    ['tb', ''],
+    ...bioText.match(/.{1,55}(\s|$)/g).map(line => ['cd', line.trim()]),
+  ];
+})();
 
 // ── Auto-generate readme.md from the actual filesystem structure ──
 // Add files/dirs to TERMINAL_FS above and this updates automatically.

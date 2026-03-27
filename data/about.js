@@ -6,6 +6,9 @@
 
 const ABOUT = {
 
+  location: 'San Francisco, CA',
+  focus:    'Distributed systems · APIs · Cloud Infra',
+
   // ── Bio card (supports <strong> for green highlights) ──
   bio: `I'm a backend engineer who loves building the invisible infrastructure that makes products fast, reliable, and resilient.
 I specialise in <strong>distributed systems</strong>, <strong>API design</strong>, and taming cloud costs at scale.<br><br>
