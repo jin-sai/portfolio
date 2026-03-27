@@ -19,7 +19,7 @@ const PROJECTS = [
       { value: '100%', label: 'offline' },
     ],
 
-    challenge: 'Ensuring the number draw felt truly random without repeats across a session, while keeping the UI responsive during animations on low-end Android devices.',
+    year: '2023',
 
     links: [
       { label: '⌥ play store', href: '#' },
@@ -39,7 +39,7 @@ const PROJECTS = [
       { value: '0',    label: 'double-bookings since launch' },
     ],
 
-    challenge: 'Preventing concurrent booking conflicts in Firestore — solved using atomic transactions so two users booking the same slot at the same time always results in exactly one confirmation.',
+    year: '2024',
 
     links: [
       { label: '⌥ github', href: '#' },

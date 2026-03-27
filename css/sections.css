@@ -53,6 +53,7 @@
 .proj-hd-l { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .proj-idx  { color: var(--muted); font-size: 11px; flex-shrink: 0; }
 .proj-name { color: var(--text); font-size: 14px; font-weight: 600; flex-shrink: 1; min-width: 0; }
+.proj-year { color: var(--muted); font-size: 11px; flex-shrink: 0; }
 .proj-card:hover .proj-name { color: var(--green); }
 .proj-tags { display: flex; gap: 5px; flex-wrap: wrap; flex-shrink: 0; }
 .tag  { font-size: 10px; padding: 2px 6px; background: var(--bg3); border: 1px solid var(--muted2); color: var(--dim); border-radius: 2px; }

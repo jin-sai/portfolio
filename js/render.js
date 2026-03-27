@@ -142,6 +142,7 @@ function renderProjects() {
           <div class="proj-hd-l">
             <span class="proj-idx">${String(i + 1).padStart(2, '0')}</span>
             <span class="proj-name">${p.title}</span>
+            <span class="proj-year">${p.year}</span>
             <div class="proj-tags">${tagsHTML}</div>
           </div>
           <span class="proj-arr">▶</span>
@@ -158,10 +159,6 @@ function renderProjects() {
           <div class="proj-section">
             <div class="proj-sec-lbl">impact</div>
             <div class="proj-metrics">${metricsHTML}</div>
-          </div>
-          <div class="proj-section">
-            <div class="proj-sec-lbl">challenge</div>
-            <p class="proj-sec-txt">${p.challenge}</p>
           </div>
           <div class="proj-links">${linksHTML}</div>
         </div>
