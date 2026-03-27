@@ -112,23 +112,12 @@ function renderSkills() {
     `;
   }).join('');
 
-  const barsHTML = SKILLS.proficiency.map(b => `
-    <div class="bar-item">
-      <div class="bar-lbl"><span>${b.label}</span><span>${b.value}%</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:${b.value}%"></div></div>
-    </div>
-  `).join('');
-
   el.innerHTML = `
     <section id="skills">
       <div class="wrap">
         <div class="sec-lbl rev">tech_stack</div>
         <div class="skills-grid">
           ${groupsHTML}
-          <div class="sg rev" style="transition-delay:${(SKILLS.groups.length * 0.04).toFixed(2)}s">
-            <div class="sg-ttl">proficiency</div>
-            <div class="bar-list">${barsHTML}</div>
-          </div>
         </div>
       </div>
     </section>
