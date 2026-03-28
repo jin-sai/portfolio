@@ -45,9 +45,9 @@ function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
   TERMINAL_FS['portfolio'].children['contact.md'].content = [
     ['cg', '# contact.md'],
     ['tb', ''],
-    ['cw', 'Email    : ' + PERSONAL.email],
-    ['cw', 'GitHub   : ' + PERSONAL.github],
-    ['cw', 'LinkedIn : ' + PERSONAL.linkedin],
+    ['cd', 'Email    :'], ['lk', 'mailto:' + PERSONAL.email],
+    ['cd', 'GitHub   :'], ['lk', 'https://' + PERSONAL.github],
+    ['cd', 'LinkedIn :'], ['lk', 'https://' + PERSONAL.linkedin],
     ['tb', ''],
     ['cg', '● ' + PERSONAL.statusText],
     ['tb', ''],
