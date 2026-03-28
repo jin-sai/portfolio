@@ -206,16 +206,14 @@ function renderExperience() {
 function renderContact() {
   const el = document.getElementById('section-contact');
 
-  // Contact links are defined inline here — edit them directly
   const links = [
-    { icon: '✉', label: 'alex@example.com',        href: 'mailto:alex@example.com' },
-    { icon: '⌥', label: 'github.com/alexrowe',      href: '#' },
-    { icon: '◈', label: 'linkedin.com/in/alexrowe', href: '#' },
-    { icon: '↓', label: 'Resume (.pdf)',             href: '#' },
+    { icon: '✉', label: PERSONAL.email,    href: 'mailto:' + PERSONAL.email },
+    { icon: '⌥', label: PERSONAL.github,   href: 'https://' + PERSONAL.github },
+    { icon: '◈', label: PERSONAL.linkedin, href: 'https://' + PERSONAL.linkedin },
   ];
 
   const linksHTML = links.map(l => `
-    <a href="${l.href}" class="clink">
+    <a href="${l.href}" class="clink" ${l.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>
       <div class="clink-l"><span class="clink-ico">${l.icon}</span><span>${l.label}</span></div>
       <span class="clink-arr">→</span>
     </a>
@@ -229,7 +227,7 @@ function renderContact() {
           <div>
             <div class="contact-hd">Let's build<em>something great.</em></div>
             <p class="contact-sub">
-              Open to senior backend, staff engineer, and founding engineer roles.
+              Open to backend and fullstack roles.
               Working on an interesting technical problem? Let's talk.<br><br>
               <span style="color:var(--green)">Response time:</span> usually within 24h.
             </p>
