@@ -18,8 +18,9 @@ const TERMINAL_FS = {
 
     'about.md': { type: 'file', content: [] },  // populated dynamically below
 
-    'skills.md':  { type: 'file', content: [] },  // populated dynamically below
-    'contact.md': { type: 'file', content: [] },  // populated dynamically below
+    'skills.md':     { type: 'file', content: [] },  // populated dynamically below
+    'education.md':  { type: 'file', content: [] },  // populated dynamically below
+    'contact.md':    { type: 'file', content: [] },  // populated dynamically below
     'projects':   { type: 'dir',  children: {} }, // populated dynamically below
     'experience': { type: 'dir',  children: {} }, // populated dynamically below
 
@@ -38,6 +39,27 @@ function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
     lines.push(['tb', '']);
   });
   TERMINAL_FS['portfolio'].children['skills.md'].content = lines;
+})();
+
+// ── Auto-generate education.md from data/education.js ──
+(function () {
+  const lines = [['cg', '# education.md'], ['tb', '']];
+  lines.push(['ca', 'Degrees :']);
+  EDUCATION.degrees.forEach(d => {
+    lines.push(['cw', '  ' + d.degree]);
+    lines.push(['cd', '  ' + d.institution + '  ·  ' + d.period]);
+    lines.push(['tb', '']);
+  });
+  const issuers = [...new Set(EDUCATION.certifications.map(c => c.issuer))];
+  lines.push(['ca', 'Certifications :']);
+  issuers.forEach(issuer => {
+    lines.push(['cg', '  ' + issuer + ' :']);
+    EDUCATION.certifications.filter(c => c.issuer === issuer).forEach(c => {
+      lines.push(['cw', '    · ' + c.name + '  (' + c.year + ')']);
+    });
+    lines.push(['tb', '']);
+  });
+  TERMINAL_FS['portfolio'].children['education.md'].content = lines;
 })();
 
 // ── Auto-generate contact.md from data/personal.js ──
