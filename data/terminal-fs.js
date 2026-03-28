@@ -85,17 +85,22 @@ function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
 (function () {
   const dir = TERMINAL_FS['portfolio'].children['experience'].children;
   EXPERIENCE.forEach(e => {
-    const parts   = e.company.split('—');
-    const company = parts[0].trim();
-    const location = parts[1] ? parts[1].trim() : '';
     const content = [
-      ['cg', '# ' + company],
+      ['cg', '# ' + e.company],
       ['ca', 'Role   : ' + e.role],
-      ['cd', 'Period : ' + e.period + (location ? ' · ' + location : '')],
+      ['cd', 'Period : ' + e.period + ' · ' + e.location],
       ['tb', ''],
-      ...e.points.map(pt => ['cw', '→ ' + pt.replace(/<[^>]+>/g, '')]),
     ];
-    dir[_slug(company)] = { type: 'file', content };
+    if (e.oneliner) {
+      content.push(['cw', e.oneliner]);
+    } else {
+      content.push(...e.story.replace(/\n/g, ' ').match(/.{1,55}(\s|$)/g).map(l => ['cd', l.trim()]));
+      content.push(['tb', ''], ['cg', 'impact :']);
+      e.metrics.forEach(m => content.push(['cw', '  ' + m.value + '  ' + m.label]));
+      content.push(['tb', ''], ['ca', 'spotlight : ' + e.spotlight.title]);
+      content.push(...e.spotlight.desc.match(/.{1,55}(\s|$)/g).map(l => ['cd', l.trim()]));
+    }
+    dir[_slug(e.company)] = { type: 'file', content };
   });
 })();
 

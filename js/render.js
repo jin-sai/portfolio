@@ -181,13 +181,35 @@ function renderExperience() {
   const el = document.getElementById('section-experience');
 
   const itemsHTML = EXPERIENCE.map(e => {
-    const ptsHTML = e.points.map(pt => `<li>${pt}</li>`).join('');
+    if (e.oneliner) {
+      return `
+        <div class="exp-item exp-minimal">
+          <div class="exp-date">${e.period}</div>
+          <div class="exp-role">${e.role}</div>
+          <div class="exp-co">${e.company} — ${e.location}</div>
+          <p class="exp-oneliner">${e.oneliner}</p>
+        </div>
+      `;
+    }
+
+    const metricsHTML = e.metrics.map(m => `
+      <div class="exp-metric">
+        <div class="exp-metric-v">${m.value}</div>
+        <div class="exp-metric-l">${m.label}</div>
+      </div>
+    `).join('');
+
     return `
       <div class="exp-item">
         <div class="exp-date">${e.period}</div>
         <div class="exp-role">${e.role}</div>
-        <div class="exp-co">${e.company}</div>
-        <ul class="exp-pts">${ptsHTML}</ul>
+        <div class="exp-co">${e.company} — ${e.location}</div>
+        <p class="exp-story">${e.story}</p>
+        <div class="exp-metrics">${metricsHTML}</div>
+        <div class="exp-spotlight">
+          <div class="exp-spotlight-lbl">featured: ${e.spotlight.title}</div>
+          <p class="exp-spotlight-desc">${e.spotlight.desc}</p>
+        </div>
       </div>
     `;
   }).join('');
