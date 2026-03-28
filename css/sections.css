@@ -96,6 +96,31 @@
 .exp-minimal .exp-co { margin-bottom: 8px; }
 .exp-oneliner { color: var(--dim); font-size: 12px; line-height: 1.72; margin: 0; }
 
+/* ── EDUCATION ── */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.edu-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 4px;
+  padding: 26px 28px; transition: border-color .2s;
+}
+.edu-card:hover { border-color: rgba(0,255,136,.28); }
+.edu-list { display: flex; flex-direction: column; gap: 20px; }
+.edu-item { display: flex; flex-direction: column; gap: 3px; }
+.edu-date   { font-size: 10px; color: var(--dim); letter-spacing: .1em; }
+.edu-degree { font-size: 13px; font-weight: 600; color: #fff; }
+.edu-inst   { font-size: 12px; color: var(--green); }
+.certs-list { display: flex; flex-direction: column; gap: 18px; }
+.cert-group { display: flex; flex-direction: column; gap: 6px; }
+.cert-issuer { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+.cert-issuer::before { content: '# '; color: var(--muted); }
+.cert-pill {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 7px 12px; background: var(--bg3); border-left: 2px solid var(--muted2);
+  transition: border-color .15s;
+}
+.cert-pill:hover { border-color: var(--green); }
+.cert-name { font-size: 11px; color: var(--text); }
+.cert-year { font-size: 10px; color: var(--green); flex-shrink: 0; margin-left: 10px; }
+
 /* ── CONTACT ── */
 #contact { padding-bottom: 110px; }
 .contact-block {

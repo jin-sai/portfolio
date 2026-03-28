@@ -17,6 +17,7 @@ function renderNav() {
       <li><a href="#skills">skills</a></li>
       <li><a href="#projects">projects</a></li>
       <li><a href="#experience">experience</a></li>
+      <li><a href="#education">education</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
     <div class="nav-status"><div class="dot"></div>${PERSONAL.statusText}</div>
@@ -220,6 +221,54 @@ function renderExperience() {
   `;
 }
 
+/* ── EDUCATION ── */
+function renderEducation() {
+  const el = document.getElementById('section-education');
+
+  const degreesHTML = EDUCATION.degrees.map(d => `
+    <div class="edu-item">
+      <div class="edu-date">${d.period}</div>
+      <div class="edu-degree">${d.degree}</div>
+      <div class="edu-inst">${d.institution}</div>
+    </div>
+  `).join('');
+
+  const issuers = [...new Set(EDUCATION.certifications.map(c => c.issuer))];
+  const certsHTML = issuers.map(issuer => {
+    const certs = EDUCATION.certifications.filter(c => c.issuer === issuer);
+    const pillsHTML = certs.map(c => `
+      <div class="cert-pill">
+        <span class="cert-name">${c.name}</span>
+        <span class="cert-year">${c.year}</span>
+      </div>
+    `).join('');
+    return `
+      <div class="cert-group">
+        <div class="cert-issuer">${issuer}</div>
+        ${pillsHTML}
+      </div>
+    `;
+  }).join('');
+
+  el.innerHTML = `
+    <section id="education">
+      <div class="wrap">
+        <div class="sec-lbl rev">education</div>
+        <div class="edu-grid">
+          <div class="edu-card rev">
+            <div class="card-hd">degrees.json</div>
+            <div class="edu-list">${degreesHTML}</div>
+          </div>
+          <div class="edu-card rev" style="transition-delay:.1s">
+            <div class="card-hd">certifications.json</div>
+            <div class="certs-list">${certsHTML}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 /* ── CONTACT ── */
 function renderContact() {
   const el = document.getElementById('section-contact');
@@ -273,5 +322,6 @@ renderAbout();
 renderSkills();
 renderProjects();
 renderExperience();
+renderEducation();
 renderContact();
 renderFooter();
