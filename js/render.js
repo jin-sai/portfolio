@@ -193,10 +193,7 @@ function renderExperience() {
     }
 
     const metricsHTML = e.metrics.map(m => `
-      <div class="exp-metric">
-        <div class="exp-metric-v">${m.value}</div>
-        <div class="exp-metric-l">${m.label}</div>
-      </div>
+      <li class="exp-metric-pt"><span class="exp-metric-v">${m.value}</span> ${m.label}</li>
     `).join('');
 
     return `
@@ -205,7 +202,7 @@ function renderExperience() {
         <div class="exp-role">${e.role}</div>
         <div class="exp-co">${e.company} — ${e.location}</div>
         <p class="exp-story">${e.story}</p>
-        <div class="exp-metrics">${metricsHTML}</div>
+        <ul class="exp-metrics">${metricsHTML}</ul>
       </div>
     `;
   }).join('');
