@@ -23,7 +23,7 @@ const PERSONAL = {
   heroLine1:  'Building systems',
   heroLine2:  'that scale.',          // rendered in green
   heroTagline: '# Backend Developer',
-  heroDesc:    '4+ years designing distributed microservices\nand event-driven systems at Cisco. Java · Spring Boot · Kafka · Kubernetes.',
+  heroDesc:    '4+ years experience. \nDesigned distributed microservices and event-driven systems. Java · Spring Boot · Kafka · OpenSearch · Kubernetes.',
 
   // ── CTA buttons ──
   ctas: [
@@ -32,7 +32,7 @@ const PERSONAL = {
   ],
 
   // ── Footer ──
-  footerTagline: 'built with <span>vim</span>, coffee &amp; terminal sessions',
+  footerTagline: 'built with <span>claude</span> terminal sessions',
   footerRight:   '© 2025 — all systems operational',
 
 };

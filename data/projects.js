@@ -7,6 +7,27 @@
 const PROJECTS = [
 
   {
+    title:   'Constrained Matching Algorithms',
+    tags:    ['C++', 'Algorithms', 'Open Source', 'Research'],
+
+    problem: 'Matching algorithms power real-world systems from hospital placements to college admissions. Standard algorithms break down when hospitals have both minimum and maximum capacity constraints and open-source tools to handle these constrained variants were missing.',
+
+    built:   'Contributed to an existing open-source C++ matching algorithms project by implementing new reduction-based algorithms for constrained variants and writing code to generate synthetic datasets for empirical testing and verification.',
+
+    metrics: [
+      { value: 'open source', label: 'contributions' },
+      { value: 'active',      label: 'used in academic research' },
+    ],
+
+    year: '2021',
+
+    links: [
+      { label: '⌥ github — GraphMatching',      href: 'https://github.com/jin-sai/GraphMatching' },
+      { label: '⌥ github — SMFQ_Graphmatching', href: 'https://github.com/jin-sai/SMFQ_Graphmatching' },
+    ],
+  },
+  
+  {
     title:   'Badminton Court Manager',
     tags:    ['Flutter', 'Dart', 'Firebase', 'Firestore'],
 
@@ -25,27 +46,6 @@ const PROJECTS = [
 
     links: [
       { label: '⌥ github', href: 'https://github.com/jin-sai/payments_app' },
-    ],
-  },
-
-  {
-    title:   'Constrained Matching Algorithms',
-    tags:    ['C++', 'Algorithms', 'Open Source', 'Research'],
-
-    problem: 'Matching algorithms power real-world systems from hospital placements to college admissions. Standard algorithms break down when hospitals have both minimum and maximum capacity constraints and open-source tools to handle these constrained variants were missing.',
-
-    built:   'Contributed to an existing open-source C++ matching algorithms project by implementing new reduction-based algorithms for constrained variants and writing code to generate synthetic datasets for empirical testing and verification.',
-
-    metrics: [
-      { value: 'open source', label: 'contributions' },
-      { value: 'active',      label: 'used in academic research' },
-    ],
-
-    year: '2021',
-
-    links: [
-      { label: '⌥ github — GraphMatching',      href: 'https://github.com/jin-sai/GraphMatching' },
-      { label: '⌥ github — SMFQ_Graphmatching', href: 'https://github.com/jin-sai/SMFQ_Graphmatching' },
     ],
   },
 
