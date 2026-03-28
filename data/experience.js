@@ -12,13 +12,13 @@ const EXPERIENCE = [
     company:  'Cisco',
     location: 'Bengaluru, India',
 
-    story: `For nearly 4 years at Cisco, I worked on the backend systems that power Webex calling analytics —
+    story: `For nearly 4 years at Cisco, I worked on the backend systems that power Webex calling analytics -
 building and maintaining the pipelines that process billions of events daily. Most of my time was
 spent making sure these systems were reliable, observable and recoverable when things went wrong.`,
 
     metrics: [
       { value: '4B+',    label: 'Webex calling events processed daily' },
-      { value: '25+',    label: 'Event-driven microservices built' },
+      { value: '15+',    label: 'Event-driven microservices built' },
       { value: '99.99%', label: 'Uptime across 4 global Kubernetes clusters' },
       { value: '10M+',   label: 'Critical records recovered via Kafka recovery tool' },
       { value: '5 min',  label: 'SLA enforced for customer-facing reports' },
@@ -36,7 +36,7 @@ spent making sure these systems were reliable, observable and recoverable when t
     role:     'Engineering Officer',
     company:  'Central Power Research Institute',
     location: 'Bengaluru, India',
-    oneliner: 'Led a small team maintaining IT infrastructure and ensuring high system uptime across the organization.',
+    oneliner: 'Led a team of 1 trainee and 4 contract engineers to maintain and optimize IT infrastructure, streamline issue resolution and ensure high system uptime across the organization.',
   },
 
 ];
