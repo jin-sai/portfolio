@@ -14,7 +14,7 @@ const PERSONAL = {
   // ── Contact ──
   email:    'saikumarj.63@gmail.com',
   github:   'github.com/jin-sai',
-  linkedin: 'linkedin.com/saikumar-pulidindi',
+  linkedin: 'linkedin.com/in/saikumar-pulidindi',
 
   // ── Nav status badge ──
   statusText: 'Open to work',
