@@ -33,6 +33,6 @@ const PERSONAL = {
 
   // ── Footer ──
   footerTagline: 'built with <span>claude</span> terminal sessions',
-  footerRight:   '© 2025 — all systems operational',
+  footerRight:   '© 2026 — all systems operational',
 
 };
