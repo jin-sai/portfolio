@@ -206,10 +206,6 @@ function renderExperience() {
         <div class="exp-co">${e.company} — ${e.location}</div>
         <p class="exp-story">${e.story}</p>
         <div class="exp-metrics">${metricsHTML}</div>
-        <div class="exp-spotlight">
-          <div class="exp-spotlight-lbl">featured: ${e.spotlight.title}</div>
-          <p class="exp-spotlight-desc">${e.spotlight.desc}</p>
-        </div>
       </div>
     `;
   }).join('');

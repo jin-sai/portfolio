@@ -97,8 +97,6 @@ function _slug(str) { return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
       content.push(...e.story.replace(/\n/g, ' ').match(/.{1,55}(\s|$)/g).map(l => ['cd', l.trim()]));
       content.push(['tb', ''], ['cg', 'impact :']);
       e.metrics.forEach(m => content.push(['cw', '  ' + m.value + '  ' + m.label]));
-      content.push(['tb', ''], ['ca', 'spotlight : ' + e.spotlight.title]);
-      content.push(...e.spotlight.desc.match(/.{1,55}(\s|$)/g).map(l => ['cd', l.trim()]));
     }
     dir[_slug(e.company)] = { type: 'file', content };
   });
