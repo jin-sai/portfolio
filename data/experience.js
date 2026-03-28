@@ -23,7 +23,7 @@ spent making sure these systems were reliable, observable and recoverable when t
       { value: '10M+',   label: 'Critical records recovered via Kafka recovery tool' },
       { value: '5 min',  label: 'SLA enforced for customer-facing reports' },
       { value: '4',      label: 'Geographically distributed clusters managed' },
-      { value: 'many',   label: 'Production incidents owned end-to-end' },
+      { value: 'Many',   label: 'Production incidents owned end-to-end' },
     ],
 
   },
