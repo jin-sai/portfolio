@@ -36,7 +36,7 @@ spent making sure these systems were reliable, observable and recoverable when t
     role:     'Engineering Officer',
     company:  'Central Power Research Institute',
     location: 'Bengaluru, India',
-    oneliner: 'Led a team of 1 trainee and 4 contract engineers to maintain and optimize IT infrastructure, streamline issue resolution and ensure high system uptime across the organization.',
+    oneliner: 'Led a team of 1 trainee and 4 contract engineers to maintain and optimize IT infrastructure, streamline issue resolution and ensure high system uptime across the organization. Built and deployed an internal service desk web application on the institute\'s server to replace manual complaint tracking.',
   },
 
 ];
