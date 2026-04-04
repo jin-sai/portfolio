@@ -135,7 +135,7 @@ function renderProjects() {
       <div class="pm"><span class="pm-v">${m.value}</span><span class="pm-l">${m.label}</span></div>
     `).join('');
     const linksHTML = p.links.map(l => l.funny
-      ? `<a href="#" class="plink" onclick="event.preventDefault();event.stopPropagation();alert('${l.funny}')">${l.label}</a>`
+      ? `<a href="#" class="plink" data-funny="${l.funny}" onclick="event.preventDefault();event.stopPropagation();openFunnyModal(this.dataset.funny)">${l.label}</a>`
       : `<a href="${l.href}" class="plink" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${l.label}</a>`
     ).join('');
     const mt = i === 0 ? '' : ' style="margin-top:2px"';
@@ -318,7 +318,42 @@ function renderFooter() {
   `;
 }
 
+/* ── Funny modal ── */
+function renderFunnyModal() {
+  const el = document.createElement('div');
+  el.id = 'funny-overlay';
+  el.innerHTML = `
+    <div id="funny-modal">
+      <div class="term-bar">
+        <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+        <span class="term-title">terminal</span>
+      </div>
+      <div class="funny-body">
+        <div class="funny-cmd">open live-site</div>
+        <div class="funny-msg" id="funny-msg"></div>
+      </div>
+      <div class="funny-footer"><button onclick="closeFunnyModal()">[ ok ]</button></div>
+    </div>
+  `;
+  el.addEventListener('click', function(e) { if (e.target === el) closeFunnyModal(); });
+  document.body.appendChild(el);
+}
+
+function openFunnyModal(msg) {
+  document.getElementById('funny-msg').textContent = msg;
+  document.getElementById('funny-overlay').classList.add('open');
+}
+
+function closeFunnyModal() {
+  document.getElementById('funny-overlay').classList.remove('open');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeFunnyModal();
+});
+
 /* ── Run all renderers ── */
+renderFunnyModal();
 renderNav();
 renderHero();
 renderAbout();
