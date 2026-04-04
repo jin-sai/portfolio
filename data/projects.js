@@ -7,6 +7,29 @@
 const PROJECTS = [
 
   {
+    title:   'Job Search Automator',
+    tags:    ['Python', 'FastAPI', 'Playwright', 'GitHub Actions', 'Google Sheets'],
+
+    problem: 'Manually checking multiple company career pages every day while job hunting is repetitive and easy to fall behind on. And even when you do check, filtering through irrelevant roles wastes even more time.',
+
+    built:   'Scraper runs daily via GitHub Actions, using Playwright to automate headless browsers across major tech company career pages. All discovered jobs are written to a Google Sheet that acts as the central data store.<br><br>Each job then goes through a filter — scored against a weighted list of skill keywords, capped by years of experience, and auto-excluded if the title matches irrelevant roles like intern, frontend, or manager. Jobs that don\'t meet the minimum score threshold are automatically marked as filtered out.<br><br>A FastAPI backend serves a private dashboard where I can review scored jobs, update application status, track interview rounds, and add notes — all without touching the spreadsheet. The UI also supports batch operations like dismissing all new jobs at once.<br><br>A read-only public demo page is hosted on GitHub Pages, showing the tracker without any sensitive data.',
+
+    metrics: [
+      { value: '100+',     label: 'jobs scraped daily' },
+      { value: '75%',      label: 'noise filtered out' },
+      { value: '1+ hrs',   label: 'saved daily' },
+      { value: 'zero',     label: 'false negatives' },
+    ],
+
+    year: '2026',
+
+    links: [
+      { label: '⌥ github', href: 'https://github.com/jin-sai/job-searcher' },
+      { label: '⌥ demo',   href: 'https://jin-sai.github.io/job-searcher/frontend/public.html' },
+    ],
+  },
+
+  {
     title:   'Developer Portfolio',
     tags:    ['Vanilla JS', 'HTML/CSS', 'Terminal UI'],
 
