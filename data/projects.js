@@ -7,6 +7,26 @@
 const PROJECTS = [
 
   {
+    title:   'Developer Portfolio',
+    tags:    ['Vanilla JS', 'HTML/CSS', 'Terminal UI'],
+
+    problem: 'Tired of leaving the portfolio field blank on job applications. Built one that reflects where I work the most -- Terminal.',
+
+    built:   'Built as a single-page static site using vanilla JS, HTML, and CSS. Features an interactive in-page terminal where visitors can navigate the site using CLI commands like ls, cat, and cd. Hosted on GitHub Pages.',
+
+    metrics: [
+      { value: '₹0', label: 'hosting cost' },
+    ],
+
+    year: '2026',
+
+    links: [
+      { label: '⌥ github', href: 'https://github.com/jin-sai/portfolio' },
+      { label: '⌥ live site', funny: 'You just tried to open a door you\'re already inside.' },
+    ],
+  },
+
+  {
     title:   'Constrained Matching Algorithms',
     tags:    ['C++', 'Algorithms', 'Open Source', 'Research'],
 
